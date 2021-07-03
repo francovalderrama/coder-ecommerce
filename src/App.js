@@ -8,6 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
          Mi primer App de React
+         Cambio prueba
         </p>
   
       </header>
