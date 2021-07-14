@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import {Link as LinkR, Link as LinkS} from 'react-router-dom'
-import {FaBars} from 'react-icons/fa'
+import {FaBars, FaShoppingBag} from 'react-icons/fa'
+
+
 
 const Nav = styled.nav`
     background:black;
@@ -29,11 +31,14 @@ const NavLogo = styled(LinkR)`
 
 const MobileIcons = styled.div`
     color:white;
+    
     display:none;
     font-size:22px;
+    cursor:pointer;
+    
     @media screen and (max-width:768px) {
-        display:block;
-        color:white;
+        display:flex;
+         justify-content: space-between;
     }
 `
 
@@ -67,7 +72,18 @@ const NavLinks = styled(LinkS)`
     font-weight:00;
     
 `
+const NavIcons = styled.div`
+    color:white;
+    display:flex;
+    align-items: center;;
 
+    @media screen and (max-width:768px){
+        display:none;
+    }
+`
+const CartWidget = styled(FaShoppingBag)`
+
+`
 function NavBar({ toggle }) {
 
 
@@ -76,24 +92,30 @@ function NavBar({ toggle }) {
             <Nav className="nav">
                 <NavBarContainer>
                     <NavLogo to='/'>
-                        Printgao
+                       Printgao
                     </NavLogo>
 
-                    <MobileIcons onClick={toggle}>
-                        <FaBars/>
+                    <MobileIcons>
+                        <FaBars  onClick={toggle}/>
+                        <CartWidget/>
                     </MobileIcons>
 
                     <NavMenu>
                         <NavItem>
-                             <NavLinks to='/' onClick={toggle}>Inicio</NavLinks>
+                             <NavLinks to='/' onClick={toggle}>Poleras</NavLinks>
                         </NavItem>
                         <NavItem>
-                             <NavLinks to='tienda'>Tienda</NavLinks>
+                             <NavLinks to='tienda'>Cuadros</NavLinks>
                         </NavItem>
                         <NavItem>
-                             <NavLinks to='contacto'>Contacto</NavLinks>
+                             <NavLinks to='contacto'>Accesorios</NavLinks>
+                             
                         </NavItem>
                      </NavMenu>
+
+                     <NavIcons>
+                            <FaShoppingBag/>
+                     </NavIcons>
                     
 
                 </NavBarContainer>

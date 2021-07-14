@@ -13,12 +13,13 @@ const SideBarContainer = styled.aside `
     background:black;
     opacity: ${({isOpen}) => (isOpen ? '100%' : '0')};
     top: ${({isOpen}) => (isOpen ? '0' : '-100%')};
-    transition:0.3s ease;
+    transition:0.4s ease;
 `
 
 const CloseIcon = styled(FaTimes)`
     color:white;
     font-size:2em;
+    cursor: pointer;
 `
 
 const Icon = styled.div `
