@@ -22,7 +22,7 @@ function App() {
          <SideBar isOpen={isOpen} toggle={toggle}/>
          <NavBar toggle={toggle}/>
         <ItemListContainer/>
-        <ItemCount />
+
         
     </Router>
   );

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemsContainer = styled.div`
     width:100%;
@@ -17,6 +18,7 @@ const ProductContainer = styled.div `
     align-items:center;
     transition:0.3s;
     text-align: center;
+    position: relative;
 
     @media screen and (max-width:768px){
         width:100%;
@@ -33,7 +35,8 @@ const Products=({title,price})=>{
     return (
         <>
         <ProductContainer>
-            <p>{title}<br/>{price}</p>
+            <p>{title}<br/>{price}</p><br/>
+            <ItemCount/>
         </ProductContainer>
       </>
     )
