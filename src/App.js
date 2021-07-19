@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
-import ItemCount from './components/ItemCount/ItemCount';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 

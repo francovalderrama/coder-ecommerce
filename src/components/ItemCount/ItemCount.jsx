@@ -12,6 +12,8 @@ const ContadorContainer = styled.div `
     justify-content: center;
     align-items:center;
     transform: translateX(-50%);
+    opacity:0;
+    transition:0.3s;
 `
 
 
@@ -26,7 +28,9 @@ export default function ItemCount() {
          setContador(contador + 1 )
     }
     function restaClick() {
+        if(contador > 1){
         setContador(contador -1);
+    }
     }
 
     function addToCart(params) {
@@ -36,7 +40,7 @@ export default function ItemCount() {
     
     return (
         <>  
-           <ContadorContainer>
+           <ContadorContainer className="prueba">
             <button onClick={restaClick}>-</button>
             <h1>{contador}</h1> 
             <button onClick={sumaClick}>+</button>
