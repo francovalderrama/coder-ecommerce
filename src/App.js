@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
@@ -16,11 +16,22 @@ function App() {
       setIsOpen(!isOpen)
     };
 
+    //Probando apis 
+  
+  //   const [poKelist,setPokeList] = useState([])
+    
+  //   useEffect(() => {
+  //     fetch('https://pokeapi.co/api/v2/pokemon/')
+  //     .then(data=> data.json())
+  //     .then(res => setPokeList(res.results))
+  // }, [])
+
+  // console.log(poKelist)
   return (
     <Router>
          <SideBar isOpen={isOpen} toggle={toggle}/>
          <NavBar toggle={toggle}/>
-        <ItemListContainer/>
+        <ItemListContainer title={"Nuestros productos"}/>
 
         
     </Router>

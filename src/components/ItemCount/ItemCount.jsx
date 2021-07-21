@@ -1,19 +1,58 @@
 import React from 'react'
 import {useState} from 'react'
 import styled from 'styled-components'
-
+import {FaCartArrowDown} from 'react-icons/fa'
 
 const ContadorContainer = styled.div `
     width:200px;
-    position: absolute;
-    top:150px;
-    left:50%;
     display:flex;
     justify-content: center;
     align-items:center;
-    transform: translateX(-50%);
-    opacity:0;
+    height:auto;
+    margin:0;
+    padding:0;
     transition:0.3s;
+    margin:10px 0;
+    flex-wrap:wrap;
+
+    button{
+        background:none;
+        border:none;
+        padding:10px;
+        cursor:pointer;
+        transition:all 0.3s ease;
+
+        &:hover{
+            transform:translateY(-3px);
+            transition:all 0.3s ease;|
+        }
+    }
+
+`
+
+const AñadirCarrito = styled.button `
+    width:100%;
+    display:block;
+    
+
+`
+
+const CountContainer = styled.div `
+    display:flex;
+    justify-content: center;;
+    width:100px;
+    align-items: center;;
+    border:2px solid #262626;
+    border-radius:30px;
+
+    p {
+        font-size:20px;
+    }
+    
+    button{
+        margin:0 10px;
+        font-size:1.1em;
+    }
 `
 
 
@@ -41,10 +80,12 @@ export default function ItemCount() {
     return (
         <>  
            <ContadorContainer className="prueba">
-            <button onClick={restaClick}>-</button>
-            <h1>{contador}</h1> 
-            <button onClick={sumaClick}>+</button>
-            <button onClick={addToCart}>Add to Cart</button>
+                <CountContainer>
+                    <button onClick={restaClick}>-</button>
+                    <p>{contador}</p> 
+                    <button onClick={sumaClick}>+</button>
+                </CountContainer>
+                <AñadirCarrito onClick={addToCart} >Añadir al Carrito <FaCartArrowDown/></AñadirCarrito>
             </ContadorContainer>
         </>
     )

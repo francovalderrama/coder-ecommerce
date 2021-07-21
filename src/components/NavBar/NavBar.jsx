@@ -84,6 +84,9 @@ const NavIcons = styled.div`
 const CartWidget = styled(FaShoppingBag)`
 
 `
+
+
+
 function NavBar({ toggle }) {
 
 
@@ -102,7 +105,7 @@ function NavBar({ toggle }) {
 
                     <NavMenu>
                         <NavItem>
-                             <NavLinks to='/' onClick={toggle}>Poleras</NavLinks>
+                             <NavLinks to='/'>Poleras</NavLinks>
                         </NavItem>
                         <NavItem>
                              <NavLinks to='tienda'>Cuadros</NavLinks>
