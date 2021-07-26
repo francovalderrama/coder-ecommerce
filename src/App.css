@@ -23,6 +23,9 @@ body{
 p{
   color:black;
 }
+.swiper-button-prev, .swiper-button-next{
+  color:#dadada;
+}
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -38,9 +41,17 @@ p{
   color: #61dafb;
 }
 
+.swiper-button-prev, .swiper-button-next{
+  color:rgba(0,0,0,0.1)  ;
+  width:20px;
+  height:
+}
 .swiper-slide{
-  background:red;
+  background:#dadada;
   min-height:400px;
+  display:flex;
+  justify-content: center;
+  align-items: center;;
 }
 
 .title{

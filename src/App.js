@@ -1,10 +1,12 @@
-import './App.css';
+
 import React, {useState, useEffect} from 'react';
 import NavBar from './components/NavBar/NavBar';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
+import Home from './components/Home/Home';
+import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
+import ItemDetail from './components/ItemListContainer/ItemDetail';
 
 
 
@@ -16,7 +18,27 @@ function App() {
       setIsOpen(!isOpen)
     };
 
-    //Probando apis 
+
+   
+   
+  return (
+    <Router>
+         <SideBar isOpen={isOpen} toggle={toggle}/>
+         <NavBar toggle={toggle}/>
+
+         <Route exact path="/" component={Home}/>
+                
+          <Route exact path="/categorias/:categoriaId" component={ItemListContainer}/>
+          <Route exact path="/productos/:productoNombre" component={ItemDetail}/>
+
+    </Router>
+  );
+}
+
+export default App;
+
+
+ //Probando apis 
   
   //   const [poKelist,setPokeList] = useState([])
     
@@ -27,15 +49,3 @@ function App() {
   // }, [])
 
   // console.log(poKelist)
-  return (
-    <Router>
-         <SideBar isOpen={isOpen} toggle={toggle}/>
-         <NavBar toggle={toggle}/>
-        <ItemListContainer title={"Nuestros productos"}/>
-
-        
-    </Router>
-  );
-}
-
-export default App;

@@ -1,7 +1,8 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import styled from 'styled-components'
-
+import { NavLink } from 'react-router-dom'
+import ItemListContainer from './ItemListContainer'
 
 const ProductContainer = styled.div `
     width:23%;
@@ -18,7 +19,23 @@ const ProductContainer = styled.div `
     border-radius:10px;
     overflow:hidden;
     cursor:pointer;
+    animation: show-in 0.6s ease;
 
+    @keyframes show-in {
+        from{
+            opacity:0;
+            top:-100px;
+        }
+        to{
+            opacity:1;
+            top:0;
+        }
+    }
+
+    @media screen and (min-width:968px) {
+        margin:0 8px;
+        width:19%;
+    }
     @media screen and (max-width:768px){
         width:45%;
         margin-top:13px;
@@ -33,6 +50,11 @@ const ProductContainer = styled.div `
         transition:0.3s;
         transform: translateY(-5px);
         box-shadow:2px 2px 15px rgba(0,0,0,0.2);
+    }
+
+    a {
+        text-decoration:none;
+        color:#262626;
     }
 
     /* &:hover .prueba {
@@ -67,23 +89,23 @@ margin:10px 0px;
 
 
 function Item({productos=[]}) {
-    console.log(productos)
+
     return (
         <>
 
    
             {
                 productos.map(product => (
+           
                     <ProductContainer className="product-container">
                         <ProductImage src={product.image}/>
                         <ProductData>
-                            <ProductTitle>{product.titulo}</ProductTitle>
+                            <ProductTitle><NavLink to={`/productos/${product.slug}`}>{product.titulo}</NavLink></ProductTitle>
                            <Price> ${product.price} </Price>
                            <ItemCount/>
                         </ProductData>
-                    
                     </ProductContainer>
-                    
+
                 ))
             }
 

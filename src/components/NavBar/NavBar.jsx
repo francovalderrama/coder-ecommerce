@@ -31,7 +31,7 @@ const NavLogo = styled(LinkR)`
 
 const MobileIcons = styled.div`
     color:white;
-    
+    width:60px;
     display:none;
     font-size:22px;
     cursor:pointer;
@@ -45,7 +45,7 @@ const MobileIcons = styled.div`
 const NavMenu = styled.ul`
     width:30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     
     @media screen and (max-width:768px){
@@ -58,6 +58,7 @@ const NavItem = styled.li`
     list-style-type:none;
     padding:8px 13px;
     transition: 0.3s ease;
+    font-weight:500;
     &:hover{
         border-bottom:3px solid white;
         transition: 0.3s ease;
@@ -105,13 +106,13 @@ function NavBar({ toggle }) {
 
                     <NavMenu>
                         <NavItem>
-                             <NavLinks to='/'>Poleras</NavLinks>
+                             <NavLinks to='/'>Inicio</NavLinks>
                         </NavItem>
                         <NavItem>
-                             <NavLinks to='tienda'>Cuadros</NavLinks>
+                             <NavLinks to='/tienda'>Tienda</NavLinks>
                         </NavItem>
                         <NavItem>
-                             <NavLinks to='contacto'>Accesorios</NavLinks>
+                             <NavLinks to='/contacto'>Contacto</NavLinks>
                              
                         </NavItem>
                      </NavMenu>

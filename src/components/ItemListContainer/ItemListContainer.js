@@ -11,6 +11,11 @@ const ItemsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
 
+    @media screen and (min-width:968px) {
+        display:flex;
+        justify-content:flex-start;
+    }
+
 
 `
 
