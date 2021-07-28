@@ -25,10 +25,28 @@ function HeroSection() {
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log('slide change')}
             >
-              <SwiperSlide>Slide 1</SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide>
+              <SwiperSlide>
+              <div className="hero-title">
+                <h1>Lorem Impsum dolor ist amet</h1>
+              
+              </div>
+                <div>
+                <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03741ea3-d06b-4d79-aa32-cd1829ace65a/calzado-de-running-air-zoom-pegasus-38-Rl7WJR.png"></img>
+                </div>
+  
+              </SwiperSlide>
+
+              <SwiperSlide>
+              <div className="hero-title">
+                <h1>Lorem Impsum dolor ist amet</h1>
+              
+              </div>
+                <div>
+                <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03741ea3-d06b-4d79-aa32-cd1829ace65a/calzado-de-running-air-zoom-pegasus-38-Rl7WJR.png"></img>
+                </div>
+  
+              </SwiperSlide>
+ 
             </Swiper>  
         </>
     )

@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import {FaCartArrowDown} from 'react-icons/fa'
 
 const ContadorContainer = styled.div `
-    width:200px;
+    width:100%;
     display:flex;
-    justify-content: center;
+    justify-content: left;
     align-items:center;
     height:auto;
     margin:0;
@@ -33,6 +33,7 @@ const ContadorContainer = styled.div `
 const AñadirCarrito = styled.button `
     width:100%;
     display:block;
+    text-align:left;
     
 
 `

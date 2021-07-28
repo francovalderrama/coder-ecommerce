@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import ItemListContainer from './ItemListContainer'
 
 const ProductContainer = styled.div `
@@ -15,8 +15,8 @@ const ProductContainer = styled.div `
     flex-wrap:wrap;
     text-align: center;
     position: relative;
-    box-shadow:2px 2px 10px rgba(0,0,0,0.2);
-    border-radius:10px;
+    border:none;
+
     overflow:hidden;
     cursor:pointer;
     animation: show-in 0.6s ease;
@@ -46,8 +46,7 @@ const ProductContainer = styled.div `
     }
 
     &:hover{
-        background:#dadada;
-        transition:0.3s;
+          transition:0.3s;
         transform: translateY(-5px);
         box-shadow:2px 2px 15px rgba(0,0,0,0.2);
     }
@@ -80,11 +79,16 @@ padding:20px 0;
 
 const Price = styled.h3 `
     margin-bottom:20px;
+    display:block;
+    text-align: left;
+    
 `
 
 const ProductTitle = styled.h3`
 font-weight:400;
 margin:10px 0px;
+display:block;
+text-align: left;
 `
 
 
@@ -98,7 +102,9 @@ function Item({productos=[]}) {
                 productos.map(product => (
            
                     <ProductContainer className="product-container">
+                        <Link className="link" to={`/productos/${product.slug}`}>
                         <ProductImage src={product.image}/>
+                        </Link>
                         <ProductData>
                             <ProductTitle><NavLink to={`/productos/${product.slug}`}>{product.titulo}</NavLink></ProductTitle>
                            <Price> ${product.price} </Price>

@@ -96,7 +96,7 @@ function NavBar({ toggle }) {
             <Nav className="nav">
                 <NavBarContainer>
                     <NavLogo to='/'>
-                       Printgao
+                       Nike
                     </NavLogo>
 
                     <MobileIcons>
@@ -109,10 +109,10 @@ function NavBar({ toggle }) {
                              <NavLinks to='/'>Inicio</NavLinks>
                         </NavItem>
                         <NavItem>
-                             <NavLinks to='/tienda'>Tienda</NavLinks>
+                             <NavLinks exact to='/categorias/jordan'>Jordan</NavLinks>
                         </NavItem>
                         <NavItem>
-                             <NavLinks to='/contacto'>Contacto</NavLinks>
+                             <NavLinks exact to='/categorias/running'>Running</NavLinks>
                              
                         </NavItem>
                      </NavMenu>

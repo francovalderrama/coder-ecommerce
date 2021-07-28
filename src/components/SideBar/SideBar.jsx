@@ -57,16 +57,16 @@ function SideBar({isOpen, toggle}) {
             <SideBarWrapper>
                 <SideBarMenu>
                     <SideBarLink to="/">
-                        Printgao
+                    Nike
                     </SideBarLink>
                     <SideBarLink to="/">
                         Inicio
                     </SideBarLink>
-                    <SideBarLink to="tienda">
-                        Tienda
+                    <SideBarLink to="/categorias/jordan">
+                        Jordan
                     </SideBarLink>
-                    <SideBarLink to="contacto">
-                        Contacto
+                    <SideBarLink to="/categorias/running">
+                        Running
                     </SideBarLink>
                 </SideBarMenu>
             </SideBarWrapper>

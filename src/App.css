@@ -47,13 +47,26 @@ p{
   height:
 }
 .swiper-slide{
-  background:#dadada;
   min-height:400px;
   display:flex;
   justify-content: center;
   align-items: center;;
 }
 
+.swiper-slide div{
+  width:50%;
+  height:400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img{
+  width:100%;
+  height:400px;
+  object-fit: cover;
+  object-position: center;
+}
 .title{
   text-align: center;;
   display:block;
@@ -73,4 +86,9 @@ p{
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.link {
+  width:100%;
 }

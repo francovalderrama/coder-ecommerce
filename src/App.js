@@ -7,6 +7,8 @@ import Home from './components/Home/Home';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetail from './components/ItemListContainer/ItemDetail';
+import Categories from './components/Categories/Categories';
+
 
 
 
@@ -28,7 +30,9 @@ function App() {
 
          <Route exact path="/" component={Home}/>
                 
-          <Route exact path="/categorias/:categoriaId" component={ItemListContainer}/>
+          <Route exact path="/categorias/:categoriaId">
+            <Categories/>
+          </Route>
           <Route exact path="/productos/:productoNombre" component={ItemDetail}/>
 
     </Router>

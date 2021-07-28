@@ -21,7 +21,7 @@ function ItemList() {
       }
 
     
-    }, [])
+    }, [categoriaId])
 
     return (
         <>

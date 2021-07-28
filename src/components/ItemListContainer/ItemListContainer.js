@@ -7,7 +7,7 @@ import ItemList from './ItemList'
 
 const ItemsContainer = styled.div`
     width:100%;
-    display:flex;
+       display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
