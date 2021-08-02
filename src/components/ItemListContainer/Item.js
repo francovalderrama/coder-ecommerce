@@ -5,7 +5,7 @@ import { NavLink, Link } from 'react-router-dom'
 import ItemListContainer from './ItemListContainer'
 
 const ProductContainer = styled.div `
-    width:23%;
+    width:22%;
     height:auto;
     border:1px solid #dadada;
     display:flex;
@@ -34,7 +34,7 @@ const ProductContainer = styled.div `
 
     @media screen and (min-width:968px) {
         margin:0 8px;
-        width:19%;
+        width:18%;
     }
     @media screen and (max-width:768px){
         width:45%;
@@ -108,7 +108,7 @@ function Item({productos=[]}) {
                         <ProductData>
                             <ProductTitle><NavLink to={`/productos/${product.slug}`}>{product.titulo}</NavLink></ProductTitle>
                            <Price> ${product.price} </Price>
-                           <ItemCount/>
+                           <ItemCount productID={product.id} productName={product.slug}/>
                         </ProductData>
                     </ProductContainer>
 
