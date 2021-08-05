@@ -3,6 +3,7 @@ import {useState} from 'react'
 import styled from 'styled-components'
 import {FaCartArrowDown, FaArrowRight} from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
+import {useCartContext} from '../../Context/CartContext'
 
 const ContadorContainer = styled.div `
     width:100%;
@@ -71,9 +72,11 @@ const CountContainer = styled.div `
 
 
 export default function ItemCount({productID, productName}) {
-    console.log(productID, productName)
+    const {cart, setCart, productos } = useCartContext();
+
     const [contador, setContador] = useState(1);
     const [added, setAdded] = useState(false);
+    
 
     function sumaClick() {
          setContador(contador + 1 )
@@ -84,9 +87,18 @@ export default function ItemCount({productID, productName}) {
     }
     }
 
-    function addToCart() {
+    function addToCart(id) {
         setAdded(!added)
-        alert("Haz agregado " + contador +" " + productName)
+        const buscaProducto = productos.find(producto => producto.id === id);
+
+        setCart([
+            ...cart,
+        {buscaProducto,
+        contador}
+    ])
+
+ 
+        //  alert("Haz agregado " + contador +" " + productName)
     }
 
     const addedToCart = () => {
@@ -109,7 +121,7 @@ export default function ItemCount({productID, productName}) {
                     <p>{contador}</p> 
                     <button onClick={sumaClick}>+</button>
                 </CountContainer>
-                <AñadirCarrito onClick={addToCart} >Añadir al Carrito <FaCartArrowDown/></AñadirCarrito>
+                <AñadirCarrito onClick={() => addToCart(productID)}>Añadir al Carrito <FaCartArrowDown/></AñadirCarrito>
                 </>
                 )
     }

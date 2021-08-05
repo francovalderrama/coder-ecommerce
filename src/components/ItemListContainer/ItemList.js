@@ -11,6 +11,7 @@ function ItemList() {
     const { categoriaId } = useParams()
 
 
+
     useEffect(() => {
       if(categoriaId===undefined){
         getProducts()
@@ -19,13 +20,12 @@ function ItemList() {
         getProducts()
         .then(resp => setProductos(resp.filter(pro => pro.categoria === categoriaId)))
       }
-
-    
     }, [categoriaId])
 
     return (
         <>
-           <Item productos={productos}/>
+           <Item productos={productos}/> 
+          
         </>
     )
 }

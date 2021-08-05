@@ -112,7 +112,7 @@ function ItemDetail() {
                         <NavLink  to={`/categorias/${detalle.categoria}`}><p className="categoria">{detalle.categoria}</p></NavLink>
                         <p className="titulo-corto">Descripción</p>
                         <p className="descripcion">{detalle.descripcion}</p>
-                        <ItemCount/>
+                        <ItemCount productID={detalle.id} productName={detalle.slug}/>
             </ProductDescription>
            
             </Container>

@@ -22,9 +22,7 @@ function HeroSection() {
               autoplay={true}
               speed = {600}
               pagination={{ clickable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log('slide change')}
-            >
+               >
               <SwiperSlide>
               <div className="hero-title">
                 <h1>Lorem Impsum dolor ist amet</h1>

@@ -5,14 +5,17 @@ import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-
 import SideBar from './components/SideBar/SideBar';
 import Home from './components/Home/Home';
 import './App.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetail from './components/ItemListContainer/ItemDetail';
 import Categories from './components/Categories/Categories';
+import CartContext, { useCartContext } from './Context/CartContext';
+import Cart from './components/Cart/Cart';
 
 
 
 
 function App() {
+
+
 
   const[isOpen, setIsOpen] = useState(false)
 
@@ -24,18 +27,25 @@ function App() {
    
    
   return (
-    <Router>
-         <SideBar isOpen={isOpen} toggle={toggle}/>
-         <NavBar toggle={toggle}/>
+    <CartContext>
+      <Router>
+        
+          <SideBar isOpen={isOpen} toggle={toggle}/>
+          <NavBar toggle={toggle}/>
+          <div className="page">
+          <Route exact path="/" component={Home}/>
+                  
+            <Route exact path="/categorias/:categoriaId">
+              <Categories/>
+            </Route>
+            <Route exact path="/productos/:productoNombre" component={ItemDetail}/>
 
-         <Route exact path="/" component={Home}/>
-                
-          <Route exact path="/categorias/:categoriaId">
-            <Categories/>
-          </Route>
-          <Route exact path="/productos/:productoNombre" component={ItemDetail}/>
-
-    </Router>
+            <Route exact path="/cart">
+              <Cart></Cart>
+            </Route>
+            </div>
+      </Router>
+    </CartContext>
   );
 }
 

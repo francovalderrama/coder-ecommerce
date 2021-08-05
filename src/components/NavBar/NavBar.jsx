@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import {Link as LinkR, Link as LinkS} from 'react-router-dom'
+import {Link as LinkR, Link as LinkS, NavLink} from 'react-router-dom'
 import {FaBars, FaShoppingBag} from 'react-icons/fa'
-
+import { useCartContext } from './../../Context/CartContext';
 
 
 const Nav = styled.nav`
@@ -12,7 +12,11 @@ const Nav = styled.nav`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-`
+    position: fixed;
+    left:0;
+    top:0;;
+    z-index:999;
+    `
 
 const NavBarContainer = styled.div `
     width:80%;
@@ -76,6 +80,7 @@ const NavLinks = styled(LinkS)`
 const NavIcons = styled.div`
     color:white;
     display:flex;
+    position: relative;
     align-items: center;;
 
     @media screen and (max-width:768px){
@@ -89,7 +94,8 @@ const CartWidget = styled(FaShoppingBag)`
 
 
 function NavBar({ toggle }) {
-
+    const{cart} = useCartContext();
+    
 
         return (
         <>
@@ -99,9 +105,10 @@ function NavBar({ toggle }) {
                        Nike
                     </NavLogo>
 
-                    <MobileIcons>
+                    <MobileIcons className="mobileicocns">
                         <FaBars  onClick={toggle}/>
                         <CartWidget/>
+                     
                     </MobileIcons>
 
                     <NavMenu>
@@ -118,7 +125,10 @@ function NavBar({ toggle }) {
                      </NavMenu>
 
                      <NavIcons>
+                         <NavLinks exact to="/cart">
                             <FaShoppingBag/>
+                            <div className="cart-length"><p>{cart.length}</p></div>
+                            </NavLinks>
                      </NavIcons>
                     
 
