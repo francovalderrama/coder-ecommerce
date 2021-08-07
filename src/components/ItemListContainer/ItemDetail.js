@@ -92,12 +92,13 @@ function ItemDetail() {
     
     const [detail, setDetail] = useState([]);
     const {productoNombre} = useParams()
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
 
            getProduct()
            .then(resp => setDetail(resp.filter(det => det.slug === productoNombre)))
-
+            
     }, [])
 
     return (

@@ -1,7 +1,7 @@
 
 const products = [
     {
-        id: "1",
+        id: 1,
         titulo: "Air Jordan XXXV Low Quai 54",
         slug:"air-jordan-XXXV-Low-Quai-54",
         categoria: "jordan",
@@ -11,7 +11,7 @@ const products = [
     },
 
     {
-        id: "2",
+        id: 2,
         titulo: "Air Jordan 11 CMFT Low Quai 54",
         slug:"Air-Jordan-11-CMFT-Low-Quai-54",
         categoria: "jordan",
@@ -21,7 +21,7 @@ const products = [
     },
 
     {
-        id: "3",
+        id: 3,
         titulo: "Jordan Point Lane",
         slug:"Jordan-Point-Lane",
         categoria: "jordan",
@@ -31,7 +31,7 @@ const products = [
     },
 
     {
-        id: "4",
+        id: 4,
         titulo: "Nike Air Zoom Pegasus 38",
         slug:"Nike-Air-Zoom-Pegasus-38",
         categoria: "running",
@@ -41,7 +41,7 @@ const products = [
     },
 
     {
-        id: "5",
+        id: 5,
         titulo: "Nike Wildhorse 7",
         slug:"Nike-Wildhorse-7",
         categoria: "running",

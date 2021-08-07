@@ -1,13 +1,13 @@
 
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import NavBar from './components/NavBar/NavBar';
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SideBar from './components/SideBar/SideBar';
 import Home from './components/Home/Home';
 import './App.css';
 import ItemDetail from './components/ItemListContainer/ItemDetail';
 import Categories from './components/Categories/Categories';
-import CartContext, { useCartContext } from './Context/CartContext';
+import CartContext from './Context/CartContext';
 import Cart from './components/Cart/Cart';
 
 

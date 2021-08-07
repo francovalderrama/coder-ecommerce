@@ -5,7 +5,6 @@ import  { useCartContext } from './../../Context/CartContext';
 
 function Home() {
 
-    const{cart} = useCartContext();
     return (
         <>  
             <HeroSection/>

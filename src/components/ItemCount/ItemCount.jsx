@@ -87,26 +87,38 @@ export default function ItemCount({productID, productName}) {
     }
     }
 
+
+
+
     function addToCart(id) {
         setAdded(!added)
-        const buscaProducto = productos.find(producto => producto.id === id);
+        const newCart = [...cart]
+        const productoAgregado = productos.find(producto => producto.id === id);
+
+        const estaEnElCart = cart.findIndex(cartItem =>  cartItem.producto.id === productoAgregado.id)
+   
+        if(estaEnElCart != -1){
+          newCart[estaEnElCart].quantity = newCart[estaEnElCart].quantity + contador;
+        }else{
 
         setCart([
-            ...cart,
-        {buscaProducto,
-        contador}
+            ...newCart,
+        {producto: productoAgregado,
+        quantity: contador}
     ])
 
- 
-        //  alert("Haz agregado " + contador +" " + productName)
+}
+
+    
     }
+
+
 
     const addedToCart = () => {
         return (
             <>
         <FinalizarBtn>
             <NavLink to="/cart">Finalizar Compra <FaArrowRight/></NavLink>
-         
         </FinalizarBtn>
         </>
         )

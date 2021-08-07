@@ -2,7 +2,6 @@ import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
-import ItemListContainer from './ItemListContainer'
 
 const ProductContainer = styled.div `
     width:22%;
