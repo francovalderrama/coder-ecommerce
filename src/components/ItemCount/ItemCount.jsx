@@ -99,6 +99,9 @@ export default function ItemCount({productID, productName}) {
    
         if(estaEnElCart != -1){
           newCart[estaEnElCart].quantity = newCart[estaEnElCart].quantity + contador;
+
+          //Para actualizar el número del cart widget cuando se vuelva agregar el mismo item.
+          setCart(newCart)
         }else{
 
         setCart([

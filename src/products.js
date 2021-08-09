@@ -7,7 +7,7 @@ const products = [
         categoria: "jordan",
         image: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/607248c9-08da-4991-b216-5db7f5e4a81d/calzado-de-b%C3%A1squetbol-air-jordan-35-low-quai-54-z1GTFq.png",
         descripcion: "Lorem imspum dolor sit amet.",
-        price: 136.990,
+        price: 5000,
     },
 
     {

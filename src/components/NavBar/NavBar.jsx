@@ -94,8 +94,10 @@ const CartWidget = styled(FaShoppingBag)`
 
 
 function NavBar({ toggle }) {
-    const{cart} = useCartContext();
-    
+    const{cart, itemsAgregados, setItemsAgregados} = useCartContext();
+
+
+    setItemsAgregados(cart.map( prod => prod.quantity).reduce((acc, el) => acc + el,0 ))
 
         return (
         <>
@@ -127,7 +129,7 @@ function NavBar({ toggle }) {
                      <NavIcons>
                          <NavLinks exact to="/cart">
                             <FaShoppingBag/>
-                            <div className="cart-length"><p>{cart.length}</p></div>
+                            <div className="cart-length"><p>{itemsAgregados}</p></div>
                             </NavLinks>
                      </NavIcons>
                     
