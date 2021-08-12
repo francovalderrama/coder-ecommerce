@@ -92,25 +92,25 @@ text-align: left;
 
 
 function Item({productos=[]}) {
-
     return (
         <>
-
+            {}
    
             {
                 productos.map(product => (
-           
+                   
                     <ProductContainer className="product-container" key={product.id}>
+                         {console.log(product.id)}
                         <Link className="link" to={`/productos/${product.slug}`}>
                         <ProductImage src={product.image}/>
                         </Link>
                         <ProductData>
-                            <ProductTitle><NavLink to={`/productos/${product.slug}`}>{product.titulo}</NavLink></ProductTitle>
+                            <ProductTitle><NavLink to={`/productos/${product.slug}`}>{product.nombre}</NavLink></ProductTitle>
                            <Price> ${product.price} </Price>
-                           <ItemCount productID={product.id} productName={product.slug}/>
+                           <ItemCount productID={product.id} productName={product.slug} className="hola"/>
                         </ProductData>
                     </ProductContainer>
-
+                        
                 ))
             }
 

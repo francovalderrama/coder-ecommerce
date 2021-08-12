@@ -2,9 +2,8 @@ import React from 'react'
 import { NavLink, useParams } from 'react-router-dom';
 import styled from 'styled-components'
 import { useEffect, useState } from 'react';
-import { getProduct } from '../../products';
 import ItemCount from '../ItemCount/ItemCount';
-import ItemListContainer from './ItemListContainer';
+import { getFirestore } from '../../servicios/firebaseService'
 
 const ItemDetailContainer = styled.div `
     display:flex;
@@ -89,18 +88,25 @@ a .categoria{
 
 
 function ItemDetail() {
-    
     const [detail, setDetail] = useState([]);
     const {productoNombre} = useParams()
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
 
-           getProduct()
-           .then(resp => setDetail(resp.filter(det => det.slug === productoNombre)))
+    useEffect(() => {
+        const dbQuery = getFirestore()
+        dbQuery.collection('items').where('slug', '==', productoNombre).get()
+        .then(resp =>  setDetail(resp.docs.map(ite => ({...ite.data(), id: ite.id}))))
+        
+    
+        
+
+        //    getProduct()
+        //    .then(resp => setDetail(resp.filter(det => det.slug === productoNombre)))
             
     }, [])
-
+    console.log("ste es el detalle")
+    console.log(detail)
     return (
         <>
         {detail.map(detalle =>(
@@ -108,7 +114,7 @@ function ItemDetail() {
                 <Container>
                     <ProductDetailImage src={detalle.image}/>
                     <ProductDescription>
-                        <h4>{detalle.titulo}</h4>
+                        <h4>{detalle.nombre}</h4>
                         <h3>${detalle.price}</h3>
                         <NavLink  to={`/categorias/${detalle.categoria}`}><p className="categoria">{detalle.categoria}</p></NavLink>
                         <p className="titulo-corto">Descripción</p>

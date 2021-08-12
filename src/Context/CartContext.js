@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import {getProducts} from '../products'
+import { getFirestore } from '../servicios/firebaseService'
 
 const CartContext = createContext()
 
@@ -19,13 +19,16 @@ function CartContextProvider({children}) {
   
 
     useEffect(() => {
-  
-        getProducts()
-        .then(resp => setProductos(resp))
+        const dbQuery = getFirestore()
+
+        dbQuery.collection('items').get()
+        .then(resp =>  setProductos(resp.docs.map(ite => ({...ite.data(), id:ite.id}))))
+       
+ 
        
     }, [])
 
-
+    console.log(productos)
     return(
         <CartContext.Provider
             value={{ cart, setCart, productos, total, setTotal, itemsAgregados, setItemsAgregados }}>

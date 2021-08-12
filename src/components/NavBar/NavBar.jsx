@@ -39,7 +39,7 @@ const MobileIcons = styled.div`
     display:none;
     font-size:22px;
     cursor:pointer;
-    
+    position: relative;;
     @media screen and (max-width:768px) {
         display:flex;
          justify-content: space-between;
@@ -109,15 +109,14 @@ function NavBar({ toggle }) {
 
                     <MobileIcons className="mobileicocns">
                         <FaBars  onClick={toggle}/>
-                        <CartWidget/>
-                     
+                        <NavLinks exact to="/cart">
+                            <CartWidget/>
+                            <div className="cart-length-mobile"><p>{itemsAgregados}</p></div>
+                        </NavLinks>
                     </MobileIcons>
 
                     <NavMenu>
-                        <NavItem>
-                             <NavLinks to='/'>Inicio</NavLinks>
-                        </NavItem>
-                        <NavItem>
+                            <NavItem>
                              <NavLinks exact to='/categorias/jordan'>Jordan</NavLinks>
                         </NavItem>
                         <NavItem>

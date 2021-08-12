@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {getProducts} from './../../products'
 import {useParams} from  'react-router-dom'
 import Item from './Item'
-
+import { getFirestore } from '../../servicios/firebaseService'
 
 function ItemList() {
 
@@ -11,21 +11,18 @@ function ItemList() {
 
     const { categoriaId } = useParams()
 
-
     useEffect(() => {
-      if(categoriaId===undefined){
-        getProducts()
-        .then(resp => {
-          setProductos(resp)
-          setLoading(false)
-        })
-      } else {
-        getProducts()
-        .then(resp => { setProductos(resp.filter(pro => pro.categoria === categoriaId))
-          setLoading(false)
-        })
-      }
-
+         const dbQuery = getFirestore()
+  
+         if(categoriaId === undefined){
+            dbQuery.collection('items').get()
+            .then(resp =>  setProductos(resp.docs.map(ite => ({...ite.data(), id: ite.id}))))
+            setLoading(false)
+         } else{
+            dbQuery.collection('items').where('categoria', '==', categoriaId).get()
+            .then(resp =>  setProductos(resp.docs.map(ite => ({...ite.data(), id: ite.id}))))
+            setLoading(false)
+        }
     }, [categoriaId])
 
     return (
