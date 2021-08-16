@@ -100,7 +100,6 @@ function Item({productos=[]}) {
                 productos.map(product => (
                    
                     <ProductContainer className="product-container" key={product.id}>
-                         {console.log(product.id)}
                         <Link className="link" to={`/productos/${product.slug}`}>
                         <ProductImage src={product.image}/>
                         </Link>

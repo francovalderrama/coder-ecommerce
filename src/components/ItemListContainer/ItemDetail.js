@@ -90,20 +90,13 @@ a .categoria{
 function ItemDetail() {
     const [detail, setDetail] = useState([]);
     const {productoNombre} = useParams()
-    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
         const dbQuery = getFirestore()
         dbQuery.collection('items').where('slug', '==', productoNombre).get()
         .then(resp =>  setDetail(resp.docs.map(ite => ({...ite.data(), id: ite.id}))))
-        
     
-        
-
-        //    getProduct()
-        //    .then(resp => setDetail(resp.filter(det => det.slug === productoNombre)))
-            
     }, [])
     console.log("ste es el detalle")
     console.log(detail)

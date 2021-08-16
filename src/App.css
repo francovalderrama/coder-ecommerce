@@ -145,36 +145,41 @@ p{
 
 }
 
-.cart-list-container{
+.cart-container{
   display: flex;
-  justify-content: center;;
-  margin-top:65px;
+  margin-top:105px;
   animation:0.3s scale-up ease;
+  padding:0 10%;
+  justify-content: space-between;
 
 }
 .cart-list{
-  width:600px;
+  width:69%;
 }
+
+.finalizar-compra{
+  width:29%;
+}
+
 @keyframes scale-up {
   from{opacity:0; scale:.8; left:-100px}
   to{opacity:1; scale:1; left:0}
 }
 .list-product{
-  width:600px;
+  width:;
   border:1px solid #dadada;
-  border-radius: 10px;
   overflow: hidden;;
   margin-top:13px;
   position: relative;
   display: flex;
-  align-items: center;;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 
-  padding:0 40px;
+  align-items: center;;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+
 }
 
 .list-product div{
-margin:0 20px;  
+margin:0 40px;  
 }
 
 .list-product span{
@@ -192,7 +197,7 @@ max-height:auto;
 }
 
 .cart-footer{
-  width:600px;
+
   margin-top:35px;
 }
 
@@ -200,12 +205,6 @@ max-height:auto;
   float:right;
 }
 
-.cart-footer .cart-buttons{
-  width:100%;
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .cart-footer  .cart-button{
   width:46%;
@@ -223,15 +222,21 @@ max-height:auto;
 
 }
 
-.finalizar-compra{
-  background:#000 !important;
-  color:white !important;
-}
 
+
+.comprar{
+  background:black;
+  padding:16px;
+  color:white;
+  border:none;
+  border-radius:30px;
+  cursor: pointer;;
+  margin-top:13px;
+}
 .total-wraper{
-  float:right;
+  margin-top:30px;
   width:100%;
-  text-align: right;
+  text-align: left;
 }
 
 .total-wraper h3{ 
@@ -256,3 +261,35 @@ max-height:auto;
 .nohayproductos{
   width:100%;
 }
+
+.finalizar-form{
+  background:white;
+  padding:20px;
+  margin-top:13px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.finalizar-form input{  
+    width:100%;
+    margin-bottom:8px;
+    padding:8px;
+    box-sizing: border-box;
+    border-radius:5px;
+    border:none;
+    background: #dadada;
+}
+
+.cart-seguir{
+  background:#dadada;
+  color:black;
+  text-decoration: none;
+  box-shadow:0 0 10px rgba(0,0,0,0.3);
+  padding:12px;
+  border-radius: 30px;
+  margin-top:20px;
+  display: block;;
+text-align: center;
+
+}
+

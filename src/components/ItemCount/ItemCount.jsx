@@ -94,10 +94,9 @@ export default function ItemCount({productID, productName}) {
         setAdded(!added)
         const newCart = [...cart]
         const productoAgregado = productos.find(producto => producto.id === id);
-        console.log(productos.find(producto => producto.id === id))
         const estaEnElCart = cart.findIndex(cartItem =>  cartItem.producto.id === productoAgregado.id)
    
-        if(estaEnElCart != -1){
+        if(estaEnElCart !== -1){
           newCart[estaEnElCart].quantity = newCart[estaEnElCart].quantity + contador;
 
           //Para actualizar el número del cart widget cuando se vuelva agregar el mismo item.

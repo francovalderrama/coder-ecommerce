@@ -16,6 +16,9 @@ function CartContextProvider({children}) {
     
     const[itemsAgregados, setItemsAgregados] = useState()
 
+    const [ordenHecha, setOrdenHecha] = useState({})
+    const [finalizado, setFinalizado] = useState(false)
+
   
 
     useEffect(() => {
@@ -28,10 +31,9 @@ function CartContextProvider({children}) {
        
     }, [])
 
-    console.log(productos)
     return(
         <CartContext.Provider
-            value={{ cart, setCart, productos, total, setTotal, itemsAgregados, setItemsAgregados }}>
+            value={{ cart, setCart, productos, total, setTotal, itemsAgregados, setItemsAgregados, finalizado, setFinalizado, ordenHecha, setOrdenHecha }}>
             {children}
 
         </CartContext.Provider>

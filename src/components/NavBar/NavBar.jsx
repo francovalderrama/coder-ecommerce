@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Link as LinkR, Link as LinkS, NavLink} from 'react-router-dom'
+import {Link as LinkR, Link as LinkS} from 'react-router-dom'
 import {FaBars, FaShoppingBag} from 'react-icons/fa'
 import { useCartContext } from './../../Context/CartContext';
 
