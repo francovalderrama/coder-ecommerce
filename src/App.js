@@ -46,6 +46,7 @@ function App() {
               <Cart></Cart>
             </Route>
             </div>
+
       </Router>
     </CartContext>
   );

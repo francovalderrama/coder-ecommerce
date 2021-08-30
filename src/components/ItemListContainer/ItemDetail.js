@@ -96,9 +96,9 @@ function ItemDetail() {
         const dbQuery = getFirestore()
         dbQuery.collection('items').where('slug', '==', productoNombre).get()
         .then(resp =>  setDetail(resp.docs.map(ite => ({...ite.data(), id: ite.id}))))
-    
-    }, [])
-    console.log("ste es el detalle")
+        
+    }, [productoNombre])
+
     console.log(detail)
     return (
         <>

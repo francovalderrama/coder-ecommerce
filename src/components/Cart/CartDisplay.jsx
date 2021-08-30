@@ -4,7 +4,7 @@ import {useCartContext} from '../../Context/CartContext'
 import {Link} from 'react-router-dom'
 
 function CartDisplay() {
-    const {cart, total, setTotal, setCart, setFinalizar} = useCartContext();
+    const {cart, setCart} = useCartContext();
     
     function borrarProducto(id){
         const newCart =[...cart]

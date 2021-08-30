@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {Link as LinkR, Link as LinkS} from 'react-router-dom'
 import {FaBars, FaShoppingBag} from 'react-icons/fa'
 import { useCartContext } from './../../Context/CartContext';
-
+import Logo from '../../images/logo.svg'
 
 const Nav = styled.nav`
     background:black;
@@ -88,7 +88,15 @@ const NavIcons = styled.div`
     }
 `
 const CartWidget = styled(FaShoppingBag)`
+font-size:22px;
+transition:0.3s ease;
+     &:hover{
+          transition:0.3s ease;
+          scale:1.2;
 
+        box-shadow:2px 2px 15px rgba(0,0,0,0.2);
+        rotate:20deg;
+    }
 `
 
 
@@ -104,7 +112,7 @@ function NavBar({ toggle }) {
             <Nav className="nav">
                 <NavBarContainer>
                     <NavLogo to='/'>
-                       Nike
+                       <img src={Logo} width="80px" alt=""></img>
                     </NavLogo>
 
                     <MobileIcons className="mobileicocns">
@@ -121,13 +129,18 @@ function NavBar({ toggle }) {
                         </NavItem>
                         <NavItem>
                              <NavLinks exact to='/categorias/running'>Running</NavLinks>
-                             
+                        </NavItem>
+                        <NavItem>
+                             <NavLinks exact to='/categorias/basquetbol'>Básquetbol</NavLinks>
+                        </NavItem>
+                        <NavItem>
+                             <NavLinks exact to='/categorias/futbol'>Fútbol</NavLinks>
                         </NavItem>
                      </NavMenu>
 
                      <NavIcons>
                          <NavLinks exact to="/cart">
-                            <FaShoppingBag/>
+                         <CartWidget/>
                             <div className="cart-length"><p>{itemsAgregados}</p></div>
                             </NavLinks>
                      </NavIcons>

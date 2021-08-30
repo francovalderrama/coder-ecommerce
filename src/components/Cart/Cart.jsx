@@ -1,12 +1,11 @@
 
 import {useCartContext} from '../../Context/CartContext'
 import CartContainer from './CartContainer';
-import {useState} from 'react'
 import CompraRealizada from './CompraRealizada';
 
 
 export default function Cart() {
-    const {cart, total, setTotal, setCart, finalizar, setFinalizar, finalizado} = useCartContext();
+    const {cart,setTotal,  finalizado} = useCartContext();
 
 
 

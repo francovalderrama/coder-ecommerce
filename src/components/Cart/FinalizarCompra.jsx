@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 function FinalizarCompra() {
     const {cart, total, setFinalizado, setOrdenHecha} = useCartContext();
     const [buyer, setBuyer] = useState(initialState);
+    const [valid, setValid] = useState(null);
 
 
 
@@ -22,24 +23,32 @@ function FinalizarCompra() {
             ...buyer,
             [e.target.name] : e.target.value
         })
+        if(buyer.nombre !== "" && buyer.email !== "" && buyer.telefono !=="" && buyer.email === buyer.confirma){
+            setValid(true)
+        }
+        console.log(buyer)
 
     }
     // console.log(buyer)
 
     function enviarCompra(e){
-
         e.preventDefault()
-        const db = getFirestore();
-        db.collection('order').add(order)
-        .then(resp => setOrdenHecha({
-            id: resp.id,
-            order: cart,
-            buyer: buyer        
-        }))
-        .then(setFinalizado(true))
-        .catch(err => console.log(err))
-        .finally(()=>{console.log("compra hecha")})
+        if(valid === true){
+            const db = getFirestore();
+            db.collection('order').add(order)
+            .then(resp => setOrdenHecha({
+                id: resp.id,
+                order: cart,
+                buyer: buyer        
+            }))
+            .then(setFinalizado(true))
+            .catch(err => console.log(err))
+            .finally(()=>{console.log("compra hecha")})
+        } else{ 
+            setValid(false)
+        }
 
+     
     }
 
     return (
@@ -54,7 +63,9 @@ function FinalizarCompra() {
   
                <input type="text" placeholder="Nombre" name="nombre" value={buyer.nombre}/>
                <input type="email" placeholder="Email" name="email" value={buyer.email}/>
+               <input type="email" placeholder="Confirma tu email" name="confirma" value={buyer.confirma}></input>
                <input type="tel" placeholder="Teléfono" name="telefono" value={buyer.telefono}/>
+               {valid === false ? <p className="error">Tienes que rellenar el formulario</p> : <p></p>  }
                {cart.length > 0 && <div className="total-wraper"><h3>Total: ${total}</h3></div> }
                 <button className="comprar" onClick={enviarCompra}>Finalizar Compra</button>
             </form>
@@ -69,5 +80,7 @@ export default FinalizarCompra
 const initialState = {
     nombre:'',
     email:'',
+    confirma:'',
     telefono:''
+
 }

@@ -41,6 +41,8 @@ function Categories() {
                         <li><h3>Categorías</h3></li>
                         <li><NavLink to="/categorias/jordan">Jordan</NavLink></li>
                         <li><NavLink to="/categorias/running">Running</NavLink></li>
+                        <li><NavLink to="/categorias/futbol">Fútbol</NavLink></li>
+                        <li><NavLink to="/categorias/basquetbol">Básquetbol</NavLink></li>
                     </ul>
                 </CategoriesSideBar>
 

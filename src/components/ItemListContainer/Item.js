@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
 
 const ProductContainer = styled.div `
-    width:22%;
+    width:25%;
     height:auto;
     border:1px solid #dadada;
     display:flex;
@@ -33,7 +33,7 @@ const ProductContainer = styled.div `
 
     @media screen and (min-width:968px) {
         margin:0 8px;
-        width:18%;
+        width:19%;
     }
     @media screen and (max-width:768px){
         width:45%;
