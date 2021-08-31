@@ -1,6 +1,6 @@
 # Proyecto Final Curso React Coder House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto desarrollado para el curso de [React JS Coder House] (https://www.coderhouse.cl/online/reactjs)
 
 ## Available Scripts
 
