@@ -2,6 +2,7 @@
 
 Proyecto Final para el curso [React JS Coder House](https://www.coderhouse.cl/online/reactjs).
 
+Para ver una demostración del proyecto [Pincha Aquí](https://upbeat-hoover-a5dba8.netlify.app/)
 ## Cuenta con
 - Navbar
 - Menu

@@ -33,7 +33,7 @@ function App() {
         
           <SideBar isOpen={isOpen} toggle={toggle}/>
           <NavBar toggle={toggle}/>
-          <div className="page">
+          <div className="page nike">
           <Route exact path="/" component={Home}/>
                   
             <Route exact path="/categorias/:categoriaId">
