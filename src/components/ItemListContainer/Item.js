@@ -33,7 +33,7 @@ const ProductContainer = styled.div `
 
     @media screen and (min-width:968px) {
         margin:0 8px;
-        width:19%;
+        width:18%;
     }
     @media screen and (max-width:768px){
         width:45%;
